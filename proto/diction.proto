@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option go_package = "/diction";
+
+package pb;
+
+// The greeting service definition.
+service Finder {
+  // Sends a greeting
+  rpc FindFile (FileRequest) returns (FileReply) {}
+}
+
+// The request message containing the user's name.
+message FileRequest {
+  string kind = 1;
+  string word = 2;
+  repeated string filename =3;
+}
+
+// The response message containing the greetings
+message FileReply {
+  repeated string message = 4;
+  string time = 5;
+}

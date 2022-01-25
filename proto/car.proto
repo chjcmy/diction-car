@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = "/car";
+
+package pb;
+
+service Maker {
+  rpc MakeCar (CarRequest) returns (CarReply) {}
+}
+
+message CarRequest {
+  string kind = 1;
+}
+
+
+message CarReply {
+  string message = 2;
+}
+
