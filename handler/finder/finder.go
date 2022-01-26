@@ -3,8 +3,8 @@ package finder
 import (
 	"bufio"
 	"context"
-	"fmt"
 	diction "diction-car/pb/diction"
+	"fmt"
 	"os"
 	"path/filepath"
 	"strings"

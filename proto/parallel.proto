@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = "/parallel";
+
+package pb;
+
+service Parallel {
+  rpc Paralleler (ParallelRequest) returns (ParallelReply) {}
+}
+
+message ParallelRequest {
+}
+
+message ParallelReply {
+
+   map<string, string> minimums = 1;
+
+}
+

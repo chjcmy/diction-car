@@ -1,14 +1,15 @@
 package main
 
 import (
+	fhandler "diction-car/handler/finder"
+	mhandler "diction-car/handler/maker"
+	diction "diction-car/pb/diction"
+	parallel "diction-car/pb/parallel"
 	"flag"
 	"fmt"
-	fhandler "diction-car/handler/finder"
-	chandler "diction-car/handler/maker"
-	car "diction-car/pb/car"
-	diction "diction-car/pb/diction"
 	"log"
 	"net"
+
 	"google.golang.org/grpc"
 )
 
@@ -25,7 +26,7 @@ func main() {
 		log.Fatalf("failed to listen: %v", err)
 	}
 	s := grpc.NewServer()
-	car.RegisterMakerServer(s, &chandler.Serviceserver{})
+	parallel.RegisterParallelServer(s, &mhandler.Serviceserver{})
 	diction.RegisterFinderServer(s, &fhandler.Serviceserver{})
 	log.Printf("server listening at %v", lis.Addr())
 	if err := s.Serve(lis); err != nil {
