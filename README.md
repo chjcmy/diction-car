@@ -12,9 +12,15 @@
 
 * diction
   * 텍스트 파일에 있는 글자를 찾아서 보내준다
-    * kind : normal or goroutine
+    * Kind : normal or goroutine
+    * Word : 찾고 싶은 단어
+    * Filename : 찾고 싶은 파일
+
+![Alt text](/diction.png)
 
 * Paralleler
   * 병렬 형식으로 값 찾아오기
   * 그냥 찾아오는 형식과 goroutine을 이용하여 찾아온다
-    * 따로 값을 줄 필요는 없음
+    * 리퀘스트 값을 줄 필요는 없음
+
+![Alt text](/paralleler.png)
